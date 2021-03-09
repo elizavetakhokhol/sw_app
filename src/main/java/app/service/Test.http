@@ -1,0 +1,28 @@
+POST http://localhost:8081/user
+Content-Type: application/json
+
+{
+"username": "test",
+"firstName": "sdsdsdsd",
+"lastName": "sdsdsds",
+"password": "gfdsdf",
+"email": "rty",
+"phone": "21345",
+"userStatus": 1
+}
+
+###
+
+POST http://localhost:8081/user/auth/
+Content-Type: application/json
+
+{
+
+  "id" : 3,
+  "username" : "test"
+}
+
+###
+
+GET http://localhost:8081/user/3
+Key: 0fa1b04d-d35c-461f-be32-bad983aff68e
