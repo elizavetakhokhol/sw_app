@@ -3,7 +3,6 @@ package app.service;
 
 import app.model.Key;
 import app.model.User;
-import app.storage.KeyRepository;
 import app.storage.KeyStorage;
 import app.storage.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +18,6 @@ public class UserService {
 
     @Autowired
     UserRepository userRepository;
-
-    @Autowired
-    KeyRepository keyRepository;
 
     @Autowired
     KeyStorage keyStorage;
@@ -54,8 +50,7 @@ public class UserService {
     public String getKeyByKey(String s) {
         List<String> allKeys = keyStorage.getAllKeys();
 
-        for (String key : allKeys
-             ) {
+        for (String key : allKeys) {
             if (key.equals(s)) {
                 return key;
             }

@@ -21,9 +21,7 @@ public class PetResource {
     public ResponseEntity<Pet> createPet(@RequestBody Pet pet) {
         petService.createPet(pet);
         return new ResponseEntity<>(pet, HttpStatus.CREATED);
-
     }
-
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<Pet> findById(@PathVariable(name = "id") long id) {

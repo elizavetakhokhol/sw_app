@@ -45,10 +45,9 @@ public class OrderResource {
     public ResponseEntity<String> deleteOrderById (@PathVariable ("orderId") long orderId) {
         if (orderService.deleteOrderById(orderId)) {
             return new ResponseEntity<>("Order deleted", HttpStatus.OK);
-            //Задать вопрос Семену насчет того, почему при void методе deleteOrder в OrderService выдается 500 код
-        } else {
+                   } else {
             return new ResponseEntity<>("Order is not blin found", HttpStatus.NOT_FOUND);
-            //Спросить у Семена, является ли HttpStatus здесь тем же самым, что в interceptor HttpServletResponse.SC_OK
+
         }
     }
 
