@@ -1,4 +1,4 @@
-package by.tms.swagger.exception;
+package app.exceptions;
 
 public class UserNotFoundException extends RuntimeException {
 
