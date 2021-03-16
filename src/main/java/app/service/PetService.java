@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import app.model.Pet;
 import app.model.PetStatus;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +15,15 @@ import java.util.List;
 
 @Data
 @Service
+@Slf4j
 public class PetService {
 
     @Autowired
     PetRepository petRepository;
 
     public void createPet(Pet pet) {
+        log.info("createPet", pet);
+
         petRepository.save(pet);
     }
 

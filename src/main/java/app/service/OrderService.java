@@ -6,6 +6,7 @@ import app.model.PetStatus;
 import app.storage.OrderRepository;
 import app.storage.PetRepository;
 import app.storage.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +14,9 @@ import java.util.*;
 
 
 @Service
+@Slf4j
 public class OrderService {
-;
+
 
     @Autowired
     OrderRepository orderRepository;
@@ -23,6 +25,7 @@ public class OrderService {
     PetRepository petRepository;
 
     public void addOrder (Order order) {
+        log.info("addOrder");
         orderRepository.save(order);
     }
 

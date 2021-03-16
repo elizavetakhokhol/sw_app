@@ -5,6 +5,7 @@ import app.model.Key;
 import app.model.User;
 import app.storage.KeyStorage;
 import app.storage.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class UserService {
 
 
@@ -24,6 +26,8 @@ public class UserService {
 
 
     public void addUser (User user) {
+        log.info("addUser", user);
+        log.trace("addUser trace");
         userRepository.save(user);
     }
 
@@ -40,10 +44,12 @@ public class UserService {
     }
 
     public boolean valid (String key) {
+        log.warn("notValidKey");
         return keyStorage.keyExists(key);
     }
 
     public void addKey (String key) {
+        log.warn("addKey");
         keyStorage.addKey(key);
     }
 

@@ -23,6 +23,9 @@ public class UserResource {
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
+
+
+
     @PostMapping(path = "/auth")
     public ResponseEntity<String> auth(@RequestBody User user) {
         if (userService.getUserById(user.getId()) != null) {
