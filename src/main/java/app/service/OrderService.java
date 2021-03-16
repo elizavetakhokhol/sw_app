@@ -30,10 +30,12 @@ public class OrderService {
     }
 
     public Optional<Order> getOrderById (long id) {
+        log.info("get order by id");
         return orderRepository.findById(id);
     }
 
     public boolean deleteOrderById (long id) {
+        log.info("delete order bi id");
             if (orderRepository.existsById(id)) {
                 orderRepository.deleteById(id);
                 return true;

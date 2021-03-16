@@ -22,14 +22,17 @@ public class CategoryService {
     }
 
     public Category getCategoryById (long id) {
+        log.info("get category by id");
         return categoryRepository.getOne(id);
     }
 
     public void deleteCategoryById (long id) {
+        log.info("get category by id");
         categoryRepository.deleteById(id);
     }
 
     public List<Category> getAllCategories () {
+        log.info("get all categories");
         return categoryRepository.findAll();
     }
 }

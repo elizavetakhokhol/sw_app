@@ -32,14 +32,17 @@ public class UserService {
     }
 
     public Optional<User> getUserById (long id) {
+        log.info("get User By Id");
         return userRepository.findById(id);
     }
 
     public void removeUserById (long id) {
+        log.info("removeUserById");
         userRepository.deleteById(id);
     }
 
     public List<User> getAllUsers () {
+        log.info("getAll");
         return userRepository.findAll();
     }
 

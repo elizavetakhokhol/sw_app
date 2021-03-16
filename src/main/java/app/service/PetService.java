@@ -28,22 +28,27 @@ public class PetService {
     }
 
     public Pet getById(long id) {
+        log.info("get pet by id");
     return petRepository.getOne(id);
     }
 
     public List<Pet> getByStatus(PetStatus petStatus) {
+        log.info("get pet by status");
         return petRepository.findAllByPetStatus(petStatus);
     }
 
     public void updateExistPet (Pet pet) {
+        log.info("update pet");
         petRepository.save(pet);
     }
 
     public void deletePet (long id) {
+        log.info("delete pet");
         petRepository.deleteById(id);
     }
 
     public List<Pet> getPetList () {
+        log.info("get pet list");
         return petRepository.findAll();
     }
 }
